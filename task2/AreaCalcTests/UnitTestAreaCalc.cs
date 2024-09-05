@@ -1,4 +1,4 @@
-using AreaCalc.figures;
+п»їusing AreaCalc.figures;
 using AreaCalc.interfaces;
 
 namespace AreaCalcTests
@@ -9,7 +9,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestGetAreaForCircle()
         {
-            // Площадь круга с радиусом 10 = 314.16
+            // РџР»РѕС‰Р°РґСЊ РєСЂСѓРіР° СЃ СЂР°РґРёСѓСЃРѕРј 10 = 314.16
             IFigure fig = new Circle(10);
             Assert.AreEqual<double>(Math.Round(AreaCalc.AreaCalc.GetArea(fig), 2), 314.16);
         }
@@ -17,7 +17,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestGetAreaForRightTriangle()
         {
-            // Прямоугольный тре-к, площадь 30
+            // РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµ-Рє, РїР»РѕС‰Р°РґСЊ 30
             var fig = new Triangle(5, 12, 13);
             Assert.AreEqual<double>(AreaCalc.AreaCalc.GetArea(fig), 30.0);
         }
@@ -25,7 +25,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestGetAreaForDefaultTriangle()
         {
-            // Площадь треугольника со сторонами 3.3, 8, 5.7 = 7.87
+            // РџР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° СЃРѕ СЃС‚РѕСЂРѕРЅР°РјРё 3.3, 8, 5.7 = 7.87
             var fig = new Triangle(3.3, 8, 5.7);
             Assert.AreEqual<double>(Math.Round(AreaCalc.AreaCalc.GetArea(fig), 2), 7.87);
         }
@@ -33,7 +33,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestGetAreaForPolygon()
         {
-            // Вызов нереализованного метода, ошибка
+            // Р’С‹Р·РѕРІ РЅРµСЂРµР°Р»РёР·РѕРІР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР°, РѕС€РёР±РєР°
             var sides = new List<double> { 3, 5, 2, 6, 7, 8, 10, 11 };
             var fig = new Polygon(sides);
             double res = 0.0;

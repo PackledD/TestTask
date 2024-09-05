@@ -1,4 +1,4 @@
-using AreaCalc.figures;
+п»їusing AreaCalc.figures;
 
 namespace AreaCalcTests
 {
@@ -8,7 +8,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestCircleCreateRadiusBelowZero()
         {
-            // Радиус отрицательный, ошибка
+            // Р Р°РґРёСѓСЃ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Р№, РѕС€РёР±РєР°
             Action create = () => new Circle(-1);
             Assert.ThrowsException<ArgumentException>(create);
         }
@@ -16,21 +16,21 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestCircleCreateRadiusZero()
         {
-            // Круг вырожден в точку, корректно
+            // РљСЂСѓРі РІС‹СЂРѕР¶РґРµРЅ РІ С‚РѕС‡РєСѓ, РєРѕСЂСЂРµРєС‚РЅРѕ
             var fig = new Circle(0);
         }
 
         [TestMethod]
         public void TestCircleCreateRadiusAboveZero()
         {
-            // Обычный круг, корректно
+            // РћР±С‹С‡РЅС‹Р№ РєСЂСѓРі, РєРѕСЂСЂРµРєС‚РЅРѕ
             var fig = new Circle(10);
         }
 
         [TestMethod]
         public void TestCircleAreaRadiusZero()
         {
-            // Точка, площадь = 0
+            // РўРѕС‡РєР°, РїР»РѕС‰Р°РґСЊ = 0
             var fig = new Circle(0);
             Assert.AreEqual<double>(fig.Area, 0.0);
         }
@@ -38,7 +38,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestCircleAreaRadius10()
         {
-            // Площадь круга с радиусом 10 = 314.16
+            // РџР»РѕС‰Р°РґСЊ РєСЂСѓРіР° СЃ СЂР°РґРёСѓСЃРѕРј 10 = 314.16
             var fig = new Circle(10);
             Assert.AreEqual<double>(Math.Round(fig.Area, 2), 314.16);
         }

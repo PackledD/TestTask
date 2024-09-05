@@ -1,4 +1,4 @@
-using AreaCalc.figures;
+п»їusing AreaCalc.figures;
 
 namespace AreaCalcTests
 {
@@ -8,7 +8,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestPolygonCreateBelowZeroSide()
         {
-            // Одна из сторон многоугольника имеет отриц. длину
+            // РћРґРЅР° РёР· СЃС‚РѕСЂРѕРЅ РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРєР° РёРјРµРµС‚ РѕС‚СЂРёС†. РґР»РёРЅСѓ
             var sides = new List<double> { 3, 5, 2, 6, 7, -8, 10, 11 };
             Action create = () => new Polygon(sides);
             Assert.ThrowsException<ArgumentException>(create);
@@ -17,7 +17,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestPolygonCreateBelowZeroSides()
         {
-            // Несколько сторон многоугольника имеет отриц. длину
+            // РќРµСЃРєРѕР»СЊРєРѕ СЃС‚РѕСЂРѕРЅ РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРєР° РёРјРµРµС‚ РѕС‚СЂРёС†. РґР»РёРЅСѓ
             var sides = new List<double> { 3, 5, 2, -6, 7, -8, 10, -11 };
             Action create = () => new Polygon(sides);
             Assert.ThrowsException<ArgumentException>(create);
@@ -26,7 +26,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestPolygonCreate()
         {
-            // Корректное создание мн-ка
+            // РљРѕСЂСЂРµРєС‚РЅРѕРµ СЃРѕР·РґР°РЅРёРµ РјРЅ-РєР°
             var sides = new List<double> { 3, 5, 2, 6, 7, 8, 10, 11 };
             var fig = new Polygon(sides);
         }
@@ -34,7 +34,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestPolygonAreaCall()
         {
-            // Вызов нереализованного метода, ошибка
+            // Р’С‹Р·РѕРІ РЅРµСЂРµР°Р»РёР·РѕРІР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР°, РѕС€РёР±РєР°
             var sides = new List<double> { 3, 5, 2, 6, 7, 8, 10, 11 };
             var fig = new Polygon(sides);
             double res = 0.0;

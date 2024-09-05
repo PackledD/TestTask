@@ -1,4 +1,4 @@
-using AreaCalc.figures;
+п»їusing AreaCalc.figures;
 
 namespace AreaCalcTests
 {
@@ -8,7 +8,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestTriangleCreateNegSide()
         {
-            // Сторона отрицательная, ошибка
+            // РЎС‚РѕСЂРѕРЅР° РѕС‚СЂРёС†Р°С‚РµР»СЊРЅР°СЏ, РѕС€РёР±РєР°
             Action create = () => new Triangle(-5, 3, 4);
             Assert.ThrowsException<ArgumentException>(create);
         }
@@ -16,7 +16,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestTriangleCreateNegSides()
         {
-            // Отрицательны все стороны, ошибка
+            // РћС‚СЂРёС†Р°С‚РµР»СЊРЅС‹ РІСЃРµ СЃС‚РѕСЂРѕРЅС‹, РѕС€РёР±РєР°
             Action create = () => new Triangle(-5, -3, -4);
             Assert.ThrowsException<ArgumentException>(create);
         }
@@ -24,7 +24,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestTriangleCreateNonExists1()
         {
-            // Не выполняется неравенство тре-ка, одна сторона больше суммы других, ошибка
+            // РќРµ РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ РЅРµСЂР°РІРµРЅСЃС‚РІРѕ С‚СЂРµ-РєР°, РѕРґРЅР° СЃС‚РѕСЂРѕРЅР° Р±РѕР»СЊС€Рµ СЃСѓРјРјС‹ РґСЂСѓРіРёС…, РѕС€РёР±РєР°
             Action create = () => new Triangle(4, 2, 1);
             Assert.ThrowsException<ArgumentException>(create);
         }
@@ -32,7 +32,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestTriangleCreateNonExists2()
         {
-            // Не выполняется неравенство тре-ка, одна сторона равна сумме других, ошибка
+            // РќРµ РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ РЅРµСЂР°РІРµРЅСЃС‚РІРѕ С‚СЂРµ-РєР°, РѕРґРЅР° СЃС‚РѕСЂРѕРЅР° СЂР°РІРЅР° СЃСѓРјРјРµ РґСЂСѓРіРёС…, РѕС€РёР±РєР°
             Action create = () => new Triangle(3, 2, 1);
             Assert.ThrowsException<ArgumentException>(create);
         }
@@ -40,7 +40,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestTriangleCreateWrongSidesCount()
         {
-            // Слишком много сторон, конструктор из списка
+            // РЎР»РёС€РєРѕРј РјРЅРѕРіРѕ СЃС‚РѕСЂРѕРЅ, РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РёР· СЃРїРёСЃРєР°
             var sides = new List<double> { 3, 5, 6, 7 };
             Action create = () => new Triangle(sides);
             Assert.ThrowsException<ArgumentException>(create);
@@ -49,14 +49,14 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestTriangleCreate()
         {
-            // Обычный треугольник, корректно
+            // РћР±С‹С‡РЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє, РєРѕСЂСЂРµРєС‚РЅРѕ
             var fig = new Triangle(3, 5, 6);
         }
 
         [TestMethod]
         public void TestTriangleCreateFromList()
         {
-            // Обычный треугольник, конструктор из списка сторон, корректно
+            // РћР±С‹С‡РЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє, РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РёР· СЃРїРёСЃРєР° СЃС‚РѕСЂРѕРЅ, РєРѕСЂСЂРµРєС‚РЅРѕ
             var sides = new List<double> { 3, 5, 6 };
             var fig = new Triangle(sides);
         }
@@ -64,7 +64,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestTriangleAreaRight1()
         {
-            // Прямоугольный тре-к, площадь 6
+            // РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµ-Рє, РїР»РѕС‰Р°РґСЊ 6
             var fig = new Triangle(3, 4, 5);
             Assert.AreEqual<double>(fig.Area, 6.0);
         }
@@ -72,7 +72,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestTriangleAreaRight2()
         {
-            // Прямоугольный тре-к, площадь 30
+            // РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµ-Рє, РїР»РѕС‰Р°РґСЊ 30
             var fig = new Triangle(5, 12, 13);
             Assert.AreEqual<double>(fig.Area, 30.0);
         }
@@ -80,7 +80,7 @@ namespace AreaCalcTests
         [TestMethod]
         public void TestTriangleAreaDefault()
         {
-            // Площадь треугольника со сторонами 3.3, 8, 5.7 = 7.87
+            // РџР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° СЃРѕ СЃС‚РѕСЂРѕРЅР°РјРё 3.3, 8, 5.7 = 7.87
             var fig = new Triangle(3.3, 8, 5.7);
             Assert.AreEqual<double>(Math.Round(fig.Area, 2), 7.87);
         }
